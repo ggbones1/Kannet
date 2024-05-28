@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import random
 import copy
-
+import pandas as pd
 
 class KAN(nn.Module):
     '''
@@ -858,6 +858,8 @@ class KAN(nn.Module):
         results['train_loss'] = []
         results['test_loss'] = []
         results['reg'] = []
+        df_results = pd.DataFrame(results)
+        df_results.to_excel('D:/output.xlsx', index=False)
         if metrics != None:
             for i in range(len(metrics)):
                 results[metrics[i].__name__] = []
@@ -925,13 +927,14 @@ class KAN(nn.Module):
             results['train_loss'].append(torch.sqrt(train_loss).cpu().detach().numpy())
             results['test_loss'].append(torch.sqrt(test_loss).cpu().detach().numpy())
             results['reg'].append(reg_.cpu().detach().numpy())
-
+            df_results = pd.DataFrame(results)
+            df_results.to_excel('D:/output.xlsx', index=False)
             if save_fig and _ % save_fig_freq == 0:
                 self.plot(folder=img_folder, in_vars=in_vars, out_vars=out_vars, title="Step {}".format(_), beta=beta)
                 plt.savefig(img_folder + '/' + str(_) + '.jpg', bbox_inches='tight', dpi=200)
                 plt.close()
 
-        return results
+        return df_results
 
     def prune(self, threshold=1e-2, mode="auto", active_neurons_id=None):
         '''
