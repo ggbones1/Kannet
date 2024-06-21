@@ -1,0 +1,6 @@
+torch
+torchvision
+wandb
+tqdm
+matplotlib
+scikit-learn
