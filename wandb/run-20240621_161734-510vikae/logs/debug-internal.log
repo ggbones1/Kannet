@@ -1,0 +1,104 @@
+2024-06-21 16:17:34,613 INFO    StreamThr :12120 [internal.py:wandb_internal():85] W&B internal server running at pid: 12120, started at: 2024-06-21 16:17:34.613373
+2024-06-21 16:17:34,614 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: status
+2024-06-21 16:17:34,620 INFO    WriterThread:12120 [datastore.py:open_for_write():87] open: F:\mycode\pykan\wandb\run-20240621_161734-510vikae\run-510vikae.wandb
+2024-06-21 16:17:34,620 DEBUG   SenderThread:12120 [sender.py:send():379] send: header
+2024-06-21 16:17:34,663 DEBUG   SenderThread:12120 [sender.py:send():379] send: run
+2024-06-21 16:17:39,730 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:17:44,796 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:17:49,865 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:17:54,929 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:17:59,994 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:05,053 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:10,125 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:15,196 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:20,255 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:25,316 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:30,361 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:35,398 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:38,310 INFO    SenderThread:12120 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001D0F0B36150>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001D0F0B36150>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\internal\internal_api.py", line 340, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001D0F0B36150>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+2024-06-21 16:18:40,446 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:45,514 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:50,575 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:18:55,628 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:19:00,682 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-21 16:19:04,730 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: cancel
+2024-06-21 16:19:04,730 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: cancel
+2024-06-21 16:19:04,730 DEBUG   SenderThread:12120 [sender.py:send():388] Record cancelled: run
+2024-06-21 16:19:04,731 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: status_report
+2024-06-21 16:19:05,762 DEBUG   HandlerThread:12120 [handler.py:handle_request():158] handle_request: shutdown
+2024-06-21 16:19:05,762 INFO    HandlerThread:12120 [handler.py:finish():882] shutting down handler
+2024-06-21 16:19:06,754 INFO    WriterThread:12120 [datastore.py:close():296] close: F:\mycode\pykan\wandb\run-20240621_161734-510vikae\run-510vikae.wandb
+2024-06-21 16:19:06,754 INFO    SenderThread:12120 [sender.py:finish():1608] shutting down sender

@@ -1,0 +1,105 @@
+2024-06-21 16:17:34,607 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Current SDK version is 0.17.2
+2024-06-21 16:17:34,607 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Configure stats pid to 34716
+2024-06-21 16:17:34,607 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Loading settings from C:\Users\liquanbo\.config\wandb\settings
+2024-06-21 16:17:34,607 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Loading settings from F:\mycode\pykan\wandb\settings
+2024-06-21 16:17:34,607 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-06-21 16:17:34,607 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'torchkan-main\\exp2.py', 'program_abspath': 'f:\\mycode\\pykan\\torchkan-main\\exp2.py', 'program': 'f:\\mycode\\pykan\\torchkan-main\\exp2.py'}
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_init.py:_log_setup():520] Logging user logs to F:\mycode\pykan\wandb\run-20240621_161734-510vikae\logs\debug.log
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_init.py:_log_setup():521] Logging internal logs to F:\mycode\pykan\wandb\run-20240621_161734-510vikae\logs\debug-internal.log
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_init.py:init():560] calling init triggers
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {}
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_init.py:init():610] starting backend
+2024-06-21 16:17:34,608 INFO    MainThread:34716 [wandb_init.py:init():614] setting up manager
+2024-06-21 16:17:34,612 INFO    MainThread:34716 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-06-21 16:17:34,613 INFO    MainThread:34716 [wandb_init.py:init():622] backend started and connected
+2024-06-21 16:17:34,620 INFO    MainThread:34716 [wandb_init.py:init():711] updated telemetry
+2024-06-21 16:17:34,663 INFO    MainThread:34716 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-06-21 16:18:34,234 INFO    Thread-9 (wrapped_target):34716 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000001E29B980790>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E29B980790>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\internal\internal_api.py", line 340, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\requests\adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001E29B980790>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+2024-06-21 16:19:04,730 ERROR   MainThread:34716 [wandb_init.py:init():770] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-06-21 16:19:04,730 ERROR   MainThread:34716 [wandb_init.py:init():1181] error in wandb.init()
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\wandb_init.py", line 1171, in init
+    return wi.init()
+           ^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\wandb_init.py", line 776, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2024-06-21 16:19:06,771 WARNING MsgRouterThr:34716 [router.py:message_loop():77] message_loop has been closed

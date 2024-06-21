@@ -7,7 +7,7 @@ import wandb
 from torchkan import KAN
 
 # Initialize wandb
-wandb.init(project="kan-vs-mlp-function-approximation", entity="1ssb")
+wandb.init(project="kan")
 
 # Define several target functions
 def sine_function(x):
