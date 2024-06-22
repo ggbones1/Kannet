@@ -1,0 +1,256 @@
+2024-06-22 19:23:07,664 INFO    StreamThr :18612 [internal.py:wandb_internal():85] W&B internal server running at pid: 18612, started at: 2024-06-22 19:23:07.663634
+2024-06-22 19:23:07,665 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: status
+2024-06-22 19:23:07,666 INFO    WriterThread:18612 [datastore.py:open_for_write():87] open: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\run-lardz01m.wandb
+2024-06-22 19:23:07,668 DEBUG   SenderThread:18612 [sender.py:send():379] send: header
+2024-06-22 19:23:07,713 DEBUG   SenderThread:18612 [sender.py:send():379] send: run
+2024-06-22 19:23:08,944 INFO    SenderThread:18612 [dir_watcher.py:__init__():211] watching files in: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files
+2024-06-22 19:23:08,944 INFO    SenderThread:18612 [sender.py:_start_run_threads():1188] run started: lardz01m with start time 1719055387.663633
+2024-06-22 19:23:08,952 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: check_version
+2024-06-22 19:23:08,952 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: check_version
+2024-06-22 19:23:10,284 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: run_start
+2024-06-22 19:23:10,313 DEBUG   HandlerThread:18612 [system_info.py:__init__():26] System info init
+2024-06-22 19:23:10,313 DEBUG   HandlerThread:18612 [system_info.py:__init__():41] System info init done
+2024-06-22 19:23:10,313 INFO    HandlerThread:18612 [system_monitor.py:start():194] Starting system monitor
+2024-06-22 19:23:10,313 INFO    SystemMonitor:18612 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-22 19:23:10,315 INFO    HandlerThread:18612 [system_monitor.py:probe():214] Collecting system info
+2024-06-22 19:23:10,321 INFO    SystemMonitor:18612 [interfaces.py:start():188] Started cpu monitoring
+2024-06-22 19:23:10,321 INFO    SystemMonitor:18612 [interfaces.py:start():188] Started disk monitoring
+2024-06-22 19:23:10,321 INFO    SystemMonitor:18612 [interfaces.py:start():188] Started gpu monitoring
+2024-06-22 19:23:10,332 INFO    SystemMonitor:18612 [interfaces.py:start():188] Started memory monitoring
+2024-06-22 19:23:10,348 INFO    SystemMonitor:18612 [interfaces.py:start():188] Started network monitoring
+2024-06-22 19:23:10,354 DEBUG   HandlerThread:18612 [system_info.py:probe():152] Probing system
+2024-06-22 19:23:10,355 DEBUG   HandlerThread:18612 [system_info.py:_probe_git():137] Probing git
+2024-06-22 19:23:10,433 DEBUG   HandlerThread:18612 [system_info.py:_probe_git():145] Probing git done
+2024-06-22 19:23:10,433 DEBUG   HandlerThread:18612 [system_info.py:probe():200] Probing system done
+2024-06-22 19:23:10,435 DEBUG   HandlerThread:18612 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.9', 'heartbeatAt': '2024-06-22T11:23:10.354086', 'startedAt': '2024-06-22T11:23:07.655446', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'f:\\mycode\\pykan\\torchkan-main\\exp3.py', 'codePathLocal': 'torchkan-main\\exp3.py', 'codePath': 'torchkan-main\\exp3.py', 'git': {'remote': None, 'commit': 'ac1a757018533fccdefa1da958333aacee5c748c'}, 'email': '2439752013@qq.com', 'root': 'F:/mycode/pykan', 'host': 'DESKTOP-7G3TLM0', 'username': 'liquanbo', 'executable': 'F:\\mycode\\pykan\\kannet\\python.exe', 'cpu_count': 16, 'cpu_count_logical': 24, 'cpu_freq': {'current': 1506.0, 'min': 0.0, 'max': 2300.0}, 'cpu_freq_per_core': [{'current': 1506.0, 'min': 0.0, 'max': 2300.0}], 'disk': {'/': {'total': 1863.0147285461426, 'used': 1633.300796508789}}, 'gpu': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'memory_total': 8585740288}], 'memory': {'total': 31.743194580078125}}
+2024-06-22 19:23:10,435 INFO    HandlerThread:18612 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-22 19:23:10,435 INFO    HandlerThread:18612 [system_monitor.py:probe():227] Publishing system info
+2024-06-22 19:23:10,435 DEBUG   HandlerThread:18612 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-06-22 19:23:10,438 ERROR   HandlerThread:18612 [system_info.py:_save_conda():223] Error saving conda packages: [WinError 2] 系统找不到指定的文件。
+Traceback (most recent call last):
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\internal\system\system_info.py", line 216, in _save_conda
+    subprocess.call(
+  File "F:\mycode\pykan\kannet\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "F:\mycode\pykan\kannet\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+2024-06-22 19:23:10,439 DEBUG   HandlerThread:18612 [system_info.py:_save_conda():224] Saving conda packages done
+2024-06-22 19:23:10,441 INFO    HandlerThread:18612 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-22 19:23:10,444 DEBUG   SenderThread:18612 [sender.py:send():379] send: files
+2024-06-22 19:23:10,444 INFO    SenderThread:18612 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-06-22 19:23:10,526 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-22 19:23:10,526 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: python_packages
+2024-06-22 19:23:10,526 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-22 19:23:10,528 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: stop_status
+2024-06-22 19:23:10,529 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:10,968 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\wandb-metadata.json
+2024-06-22 19:23:10,968 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\conda-environment.yaml
+2024-06-22 19:23:10,968 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\requirements.txt
+2024-06-22 19:23:11,278 DEBUG   SenderThread:18612 [sender.py:send():379] send: telemetry
+2024-06-22 19:23:11,542 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:11,919 INFO    wandb-upload_0:18612 [upload_job.py:push():130] Uploaded file C:\Users\liquanbo\AppData\Local\Temp\tmpdxsz456jwandb\veku4a0w-wandb-metadata.json
+2024-06-22 19:23:11,977 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:12,556 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:12,841 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: status_report
+2024-06-22 19:23:13,572 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:14,006 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:14,584 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:15,595 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:16,033 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:16,610 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:17,614 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:17,905 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: status_report
+2024-06-22 19:23:18,037 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:18,615 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:19,618 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:20,053 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:20,630 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:21,644 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:22,079 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:22,657 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:23,116 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: status_report
+2024-06-22 19:23:23,666 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:24,102 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:24,677 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:25,528 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: log_artifact
+2024-06-22 19:23:25,528 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: log_artifact
+2024-06-22 19:23:25,533 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-22 19:23:25,688 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:26,124 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:26,124 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media\table\KAN Predictions vs Actuals_0_5928548f2fdfc46072a4.table.json
+2024-06-22 19:23:26,124 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media
+2024-06-22 19:23:26,124 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media\table
+2024-06-22 19:23:26,683 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:26,844 INFO    wandb-upload_0:18612 [upload_job.py:push():130] Uploaded file C:\Users\liquanbo\AppData\Local\Temp\tmpdxsz456jwandb\7noevhzv-media/table/KAN Predictions vs Actuals_0_5928548f2fdfc46072a4.table.json
+2024-06-22 19:23:27,378 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: log_artifact
+2024-06-22 19:23:27,390 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-22 19:23:27,763 INFO    wandb-upload_1:18612 [upload_job.py:push():88] Uploaded file C:\Users\liquanbo\AppData\Local\wandb\wandb\artifacts\staging\tmpz_2oqlv_
+2024-06-22 19:23:28,150 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media\table\MLP Predictions vs Actuals_0_dbeb0adc78e57cda39ef.table.json
+2024-06-22 19:23:28,150 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media\table
+2024-06-22 19:23:28,412 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:28,974 INFO    SenderThread:18612 [sender.py:send_request_log_artifact():1518] logged artifact run-lardz01m-KANPredictionsvsActuals - {'id': 'QXJ0aWZhY3Q6OTEwMzg3Nzk1', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjIxOTQ0NjAxMg==', 'latestArtifact': None}}
+2024-06-22 19:23:28,975 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: stop_status
+2024-06-22 19:23:28,976 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: status_report
+2024-06-22 19:23:29,316 DEBUG   SenderThread:18612 [sender.py:send():379] send: files
+2024-06-22 19:23:29,316 INFO    SenderThread:18612 [sender.py:_save_file():1454] saving file media\table\KAN Predictions vs Actuals_0_5928548f2fdfc46072a4.table.json with policy now
+2024-06-22 19:23:29,317 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: log_artifact
+2024-06-22 19:23:29,688 INFO    wandb-upload_0:18612 [upload_job.py:push():130] Uploaded file C:\Users\liquanbo\AppData\Local\Temp\tmpdxsz456jwandb\cd4qtjzr-media/table/MLP Predictions vs Actuals_0_dbeb0adc78e57cda39ef.table.json
+2024-06-22 19:23:30,590 INFO    wandb-upload_1:18612 [upload_job.py:push():130] Uploaded file C:\Users\liquanbo\AppData\Local\Temp\tmpdxsz456jwandb\ytmccpxq-media/table/KAN Predictions vs Actuals_0_5928548f2fdfc46072a4.table.json
+2024-06-22 19:23:30,887 INFO    wandb-upload_0:18612 [upload_job.py:push():88] Uploaded file C:\Users\liquanbo\AppData\Local\wandb\wandb\artifacts\staging\tmp4zfbtd3a
+2024-06-22 19:23:32,102 INFO    SenderThread:18612 [sender.py:send_request_log_artifact():1518] logged artifact run-lardz01m-MLPPredictionsvsActuals - {'id': 'QXJ0aWZhY3Q6OTEwMzg3ODI3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjIxOTQ0NjAyMA==', 'latestArtifact': None}}
+2024-06-22 19:23:32,102 DEBUG   SenderThread:18612 [sender.py:send():379] send: files
+2024-06-22 19:23:32,102 INFO    SenderThread:18612 [sender.py:_save_file():1454] saving file media\table\MLP Predictions vs Actuals_0_dbeb0adc78e57cda39ef.table.json with policy now
+2024-06-22 19:23:32,102 DEBUG   SenderThread:18612 [sender.py:send():379] send: history
+2024-06-22 19:23:32,103 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: summary_record
+2024-06-22 19:23:32,106 INFO    SenderThread:18612 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-22 19:23:32,107 DEBUG   SenderThread:18612 [sender.py:send():379] send: telemetry
+2024-06-22 19:23:32,107 DEBUG   SenderThread:18612 [sender.py:send():379] send: exit
+2024-06-22 19:23:32,107 INFO    SenderThread:18612 [sender.py:send_exit():586] handling exit code: 1
+2024-06-22 19:23:32,107 INFO    SenderThread:18612 [sender.py:send_exit():588] handling runtime: 17
+2024-06-22 19:23:32,108 INFO    SenderThread:18612 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-22 19:23:32,108 INFO    SenderThread:18612 [sender.py:send_exit():594] send defer
+2024-06-22 19:23:32,108 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:32,108 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,109 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 0
+2024-06-22 19:23:32,109 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,109 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-06-22 19:23:32,109 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 1
+2024-06-22 19:23:32,109 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,109 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 1
+2024-06-22 19:23:32,109 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,109 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-06-22 19:23:32,109 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 2
+2024-06-22 19:23:32,109 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,109 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 2
+2024-06-22 19:23:32,109 INFO    HandlerThread:18612 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-22 19:23:32,109 DEBUG   SystemMonitor:18612 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-22 19:23:32,118 DEBUG   SystemMonitor:18612 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-22 19:23:32,118 INFO    HandlerThread:18612 [interfaces.py:finish():200] Joined cpu monitor
+2024-06-22 19:23:32,118 DEBUG   SystemMonitor:18612 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-22 19:23:32,118 INFO    HandlerThread:18612 [interfaces.py:finish():200] Joined disk monitor
+2024-06-22 19:23:32,172 INFO    HandlerThread:18612 [interfaces.py:finish():200] Joined gpu monitor
+2024-06-22 19:23:32,172 INFO    HandlerThread:18612 [interfaces.py:finish():200] Joined memory monitor
+2024-06-22 19:23:32,172 INFO    HandlerThread:18612 [interfaces.py:finish():200] Joined network monitor
+2024-06-22 19:23:32,172 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,172 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-06-22 19:23:32,172 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 3
+2024-06-22 19:23:32,172 DEBUG   SenderThread:18612 [sender.py:send():379] send: stats
+2024-06-22 19:23:32,173 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,173 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 3
+2024-06-22 19:23:32,173 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,173 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-06-22 19:23:32,173 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 4
+2024-06-22 19:23:32,173 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,173 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 4
+2024-06-22 19:23:32,173 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,173 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-06-22 19:23:32,173 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 5
+2024-06-22 19:23:32,173 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,173 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 5
+2024-06-22 19:23:32,173 DEBUG   SenderThread:18612 [sender.py:send():379] send: summary
+2024-06-22 19:23:32,175 INFO    SenderThread:18612 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-22 19:23:32,175 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,175 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-06-22 19:23:32,175 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 6
+2024-06-22 19:23:32,175 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,175 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 6
+2024-06-22 19:23:32,176 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,176 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-06-22 19:23:32,177 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: status_report
+2024-06-22 19:23:32,180 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_created():271] file/dir created: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\wandb-summary.json
+2024-06-22 19:23:32,447 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:32,479 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 7
+2024-06-22 19:23:32,479 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:32,479 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:32,480 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 7
+2024-06-22 19:23:32,480 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:32,480 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-06-22 19:23:32,926 INFO    wandb-upload_1:18612 [upload_job.py:push():130] Uploaded file C:\Users\liquanbo\AppData\Local\Temp\tmpdxsz456jwandb\tb1nkp1u-media/table/MLP Predictions vs Actuals_0_dbeb0adc78e57cda39ef.table.json
+2024-06-22 19:23:33,195 INFO    Thread-16 :18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\config.yaml
+2024-06-22 19:23:33,459 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:33,700 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 8
+2024-06-22 19:23:33,700 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:33,700 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:33,701 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 8
+2024-06-22 19:23:33,701 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:33,701 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-06-22 19:23:33,701 INFO    SenderThread:18612 [job_builder.py:build():440] Attempting to build job artifact
+2024-06-22 19:23:33,702 INFO    SenderThread:18612 [job_builder.py:_get_source_type():580] no source found
+2024-06-22 19:23:33,702 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 9
+2024-06-22 19:23:33,702 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:33,702 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 9
+2024-06-22 19:23:33,702 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:33,702 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-06-22 19:23:33,702 INFO    SenderThread:18612 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-06-22 19:23:34,205 INFO    SenderThread:18612 [dir_watcher.py:_on_file_modified():288] file/dir modified: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:34,206 INFO    SenderThread:18612 [dir_watcher.py:finish():388] scan: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files
+2024-06-22 19:23:34,206 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\conda-environment.yaml conda-environment.yaml
+2024-06-22 19:23:34,206 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\config.yaml config.yaml
+2024-06-22 19:23:34,206 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log output.log
+2024-06-22 19:23:34,207 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\requirements.txt requirements.txt
+2024-06-22 19:23:34,210 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\wandb-metadata.json wandb-metadata.json
+2024-06-22 19:23:34,210 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\wandb-summary.json wandb-summary.json
+2024-06-22 19:23:34,212 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media\table\KAN Predictions vs Actuals_0_5928548f2fdfc46072a4.table.json media/table/KAN Predictions vs Actuals_0_5928548f2fdfc46072a4.table.json
+2024-06-22 19:23:34,212 INFO    SenderThread:18612 [dir_watcher.py:finish():402] scan save: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\media\table\MLP Predictions vs Actuals_0_dbeb0adc78e57cda39ef.table.json media/table/MLP Predictions vs Actuals_0_dbeb0adc78e57cda39ef.table.json
+2024-06-22 19:23:34,212 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 10
+2024-06-22 19:23:34,212 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:34,212 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 10
+2024-06-22 19:23:34,213 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:34,213 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-06-22 19:23:34,213 INFO    SenderThread:18612 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-22 19:23:34,470 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:34,470 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:34,918 INFO    wandb-upload_1:18612 [upload_job.py:push():130] Uploaded file F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\output.log
+2024-06-22 19:23:34,931 INFO    wandb-upload_0:18612 [upload_job.py:push():130] Uploaded file F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\config.yaml
+2024-06-22 19:23:35,379 INFO    wandb-upload_3:18612 [upload_job.py:push():130] Uploaded file F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\wandb-summary.json
+2024-06-22 19:23:35,406 INFO    wandb-upload_2:18612 [upload_job.py:push():130] Uploaded file F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\files\requirements.txt
+2024-06-22 19:23:35,482 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:35,483 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:35,623 INFO    Thread-15 (_thread_body):18612 [sender.py:transition_state():614] send defer: 11
+2024-06-22 19:23:35,623 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:35,623 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 11
+2024-06-22 19:23:35,623 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:35,623 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-06-22 19:23:35,623 INFO    SenderThread:18612 [file_pusher.py:join():175] waiting for file pusher
+2024-06-22 19:23:35,624 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 12
+2024-06-22 19:23:35,625 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:35,625 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 12
+2024-06-22 19:23:35,625 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:35,625 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-06-22 19:23:35,625 INFO    SenderThread:18612 [file_stream.py:finish():601] file stream finish called
+2024-06-22 19:23:35,930 INFO    SenderThread:18612 [file_stream.py:finish():605] file stream finish is done
+2024-06-22 19:23:35,930 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 13
+2024-06-22 19:23:35,930 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:35,930 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 13
+2024-06-22 19:23:35,930 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:35,930 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-06-22 19:23:35,930 INFO    SenderThread:18612 [sender.py:transition_state():614] send defer: 14
+2024-06-22 19:23:35,932 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: defer
+2024-06-22 19:23:35,932 DEBUG   SenderThread:18612 [sender.py:send():379] send: final
+2024-06-22 19:23:35,932 INFO    HandlerThread:18612 [handler.py:handle_request_defer():184] handle defer: 14
+2024-06-22 19:23:35,933 DEBUG   SenderThread:18612 [sender.py:send():379] send: footer
+2024-06-22 19:23:35,933 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: defer
+2024-06-22 19:23:35,933 INFO    SenderThread:18612 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-06-22 19:23:35,934 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:35,934 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: server_info
+2024-06-22 19:23:35,935 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-22 19:23:35,935 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:35,935 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: get_summary
+2024-06-22 19:23:35,935 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: server_info
+2024-06-22 19:23:35,935 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: sampled_history
+2024-06-22 19:23:35,936 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-22 19:23:36,219 DEBUG   SenderThread:18612 [sender.py:send_request():406] send_request: poll_exit
+2024-06-22 19:23:36,219 INFO    MainThread:18612 [wandb_run.py:_footer_history_summary_info():3988] rendering history
+2024-06-22 19:23:36,219 INFO    MainThread:18612 [wandb_run.py:_footer_history_summary_info():4020] rendering summary
+2024-06-22 19:23:36,219 INFO    MainThread:18612 [wandb_run.py:_footer_sync_info():3947] logging synced files
+2024-06-22 19:23:36,220 DEBUG   HandlerThread:18612 [handler.py:handle_request():158] handle_request: shutdown
+2024-06-22 19:23:36,221 INFO    HandlerThread:18612 [handler.py:finish():882] shutting down handler
+2024-06-22 19:23:36,947 INFO    WriterThread:18612 [datastore.py:close():296] close: F:\mycode\pykan\wandb\run-20240622_192307-lardz01m\run-lardz01m.wandb
+2024-06-22 19:23:37,225 INFO    SenderThread:18612 [sender.py:finish():1608] shutting down sender
+2024-06-22 19:23:37,225 INFO    SenderThread:18612 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-22 19:23:37,225 INFO    SenderThread:18612 [file_pusher.py:join():175] waiting for file pusher
