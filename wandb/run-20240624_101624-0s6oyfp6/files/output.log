@@ -1,0 +1,223 @@
+F:\mycode\pykan\kannet\Lib\site-packages\torch\nn\modules\loss.py:535: UserWarning: Using a target size (torch.Size([32, 1, 2])) that is different to the input size (torch.Size([32, 2])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+F:\mycode\pykan\kannet\Lib\site-packages\torch\nn\modules\loss.py:535: UserWarning: Using a target size (torch.Size([12, 1, 2])) that is different to the input size (torch.Size([12, 2])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+F:\mycode\pykan\kannet\Lib\site-packages\torch\nn\modules\loss.py:535: UserWarning: Using a target size (torch.Size([20, 1, 2])) that is different to the input size (torch.Size([20, 2])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+Epoch 0, KAN Train Loss: 0.5370599561267428, Validation Loss: 0.5348095446825027
+Epoch 1, KAN Train Loss: 0.5237057142787509, Validation Loss: 0.5132697224617004
+Epoch 2, KAN Train Loss: 0.4857553409205543, Validation Loss: 0.48052283376455307
+Epoch 3, KAN Train Loss: 0.47914710972044205, Validation Loss: 0.47342928498983383
+Epoch 4, KAN Train Loss: 0.46040093236499363, Validation Loss: 0.45469850301742554
+Epoch 5, KAN Train Loss: 0.44300737977027893, Validation Loss: 0.4367638900876045
+Epoch 6, KAN Train Loss: 0.4288076062997182, Validation Loss: 0.41956833750009537
+Epoch 7, KAN Train Loss: 0.4097725318537818, Validation Loss: 0.40326064079999924
+Epoch 8, KAN Train Loss: 0.39348362551795113, Validation Loss: 0.3794647678732872
+Epoch 9, KAN Train Loss: 0.34289835890134174, Validation Loss: 0.29667630791664124
+Epoch 10, KAN Train Loss: 0.3054184118906657, Validation Loss: 0.28696952760219574
+Epoch 11, KAN Train Loss: 0.30306901534398395, Validation Loss: 0.2766951769590378
+Epoch 12, KAN Train Loss: 0.28880880607499015, Validation Loss: 0.2669854685664177
+Epoch 13, KAN Train Loss: 0.2843456549776925, Validation Loss: 0.2580532021820545
+Epoch 14, KAN Train Loss: 0.27476440535651314, Validation Loss: 0.24976160004734993
+Epoch 15, KAN Train Loss: 0.26639189488357967, Validation Loss: 0.2420164905488491
+Epoch 16, KAN Train Loss: 0.26058055957158405, Validation Loss: 0.2347848042845726
+Epoch 17, KAN Train Loss: 0.25248414278030396, Validation Loss: 0.22787711024284363
+Epoch 18, KAN Train Loss: 0.24153867529498207, Validation Loss: 0.22136833891272545
+Epoch 19, KAN Train Loss: 0.2361299693584442, Validation Loss: 0.21522458270192146
+Epoch 20, KAN Train Loss: 0.23927155302630532, Validation Loss: 0.21226632967591286
+Epoch 21, KAN Train Loss: 0.22981086373329163, Validation Loss: 0.20935764908790588
+Epoch 22, KAN Train Loss: 0.22569765481683943, Validation Loss: 0.20653801038861275
+Epoch 23, KAN Train Loss: 0.22373080915874904, Validation Loss: 0.20379212871193886
+Epoch 24, KAN Train Loss: 0.218797504901886, Validation Loss: 0.20108459889888763
+Epoch 25, KAN Train Loss: 0.225294957558314, Validation Loss: 0.19843997806310654
+Epoch 26, KAN Train Loss: 0.2159489674700631, Validation Loss: 0.19583052396774292
+Epoch 27, KAN Train Loss: 0.21256347331735823, Validation Loss: 0.19330139458179474
+Epoch 28, KAN Train Loss: 0.21456994944148594, Validation Loss: 0.19083185866475105
+Epoch 29, KAN Train Loss: 0.21264660358428955, Validation Loss: 0.18838974460959435
+Epoch 30, KAN Train Loss: 0.2064095354742474, Validation Loss: 0.18716490641236305
+Epoch 31, KAN Train Loss: 0.21161740190453, Validation Loss: 0.18597107753157616
+Epoch 32, KAN Train Loss: 0.20765734877851275, Validation Loss: 0.18477856367826462
+Epoch 33, KAN Train Loss: 0.20364254713058472, Validation Loss: 0.18359492346644402
+Epoch 34, KAN Train Loss: 0.20314455860190922, Validation Loss: 0.18240481242537498
+Epoch 35, KAN Train Loss: 0.20198842055267757, Validation Loss: 0.180607870221138
+Epoch 36, KAN Train Loss: 0.2013484537601471, Validation Loss: 0.18358544632792473
+Epoch 37, KAN Train Loss: 0.19962493081887564, Validation Loss: 0.17899774760007858
+Epoch 38, KAN Train Loss: 0.2004045993089676, Validation Loss: 0.17787328362464905
+Epoch 39, KAN Train Loss: 0.1971311585770713, Validation Loss: 0.17676953598856926
+Epoch 40, KAN Train Loss: 0.20203162067466313, Validation Loss: 0.17621325701475143
+Epoch 41, KAN Train Loss: 0.20265091127819485, Validation Loss: 0.1756596677005291
+Epoch 42, KAN Train Loss: 0.19596850044197506, Validation Loss: 0.17509926110506058
+Epoch 43, KAN Train Loss: 0.19962924222151437, Validation Loss: 0.17454657331109047
+Epoch 44, KAN Train Loss: 0.19726570116149056, Validation Loss: 0.1739937923848629
+Epoch 45, KAN Train Loss: 0.19412583940558964, Validation Loss: 0.1734376773238182
+Epoch 46, KAN Train Loss: 0.19068479041258493, Validation Loss: 0.17288517206907272
+Epoch 47, KAN Train Loss: 0.195982469452752, Validation Loss: 0.17233741283416748
+Epoch 48, KAN Train Loss: 0.19286925428443485, Validation Loss: 0.17177867516875267
+Epoch 49, KAN Train Loss: 0.19156682988007864, Validation Loss: 0.17123058438301086
+Epoch 0, MLP Train Loss: 0.2029293891456392, Validation Loss: 0.13982877507805824
+Epoch 1, MLP Train Loss: 0.17342503451638752, Validation Loss: 0.1127645168453455
+Epoch 2, MLP Train Loss: 0.13919969648122787, Validation Loss: 0.08274751156568527
+Epoch 3, MLP Train Loss: 0.09758051153686312, Validation Loss: 0.05181047227233648
+Epoch 4, MLP Train Loss: 0.0655304491519928, Validation Loss: 0.05993915721774101
+Epoch 5, MLP Train Loss: 0.06562112727098995, Validation Loss: 0.053867897018790245
+Epoch 6, MLP Train Loss: 0.062004385309086904, Validation Loss: 0.04931841976940632
+Epoch 7, MLP Train Loss: 0.062158054361740746, Validation Loss: 0.0496946033090353
+Epoch 8, MLP Train Loss: 0.05954669167598089, Validation Loss: 0.052034092135727406
+Epoch 9, MLP Train Loss: 0.060644260711140104, Validation Loss: 0.050923495553433895
+Epoch 10, MLP Train Loss: 0.06143383267852995, Validation Loss: 0.05072556436061859
+Epoch 11, MLP Train Loss: 0.06034193767441644, Validation Loss: 0.0509455930441618
+Epoch 12, MLP Train Loss: 0.06278440687391493, Validation Loss: 0.05067059490829706
+Epoch 13, MLP Train Loss: 0.05994994855589337, Validation Loss: 0.05070366524159908
+Epoch 14, MLP Train Loss: 0.06130297357837359, Validation Loss: 0.050262581557035446
+Epoch 15, MLP Train Loss: 0.06025827634665701, Validation Loss: 0.05044985469430685
+Epoch 16, MLP Train Loss: 0.059451326727867126, Validation Loss: 0.05111765116453171
+Epoch 17, MLP Train Loss: 0.060256474961837135, Validation Loss: 0.050330267287790775
+Epoch 18, MLP Train Loss: 0.059067012949122324, Validation Loss: 0.050545734353363514
+Epoch 19, MLP Train Loss: 0.05963372025224897, Validation Loss: 0.05022782739251852
+Epoch 20, MLP Train Loss: 0.060449163946840495, Validation Loss: 0.050347719341516495
+Epoch 21, MLP Train Loss: 0.05925130512979296, Validation Loss: 0.05045556742697954
+Epoch 22, MLP Train Loss: 0.06068879821234279, Validation Loss: 0.050391160883009434
+Epoch 23, MLP Train Loss: 0.060689487804969154, Validation Loss: 0.05064997170120478
+Epoch 24, MLP Train Loss: 0.061860743910074234, Validation Loss: 0.05076369270682335
+Epoch 25, MLP Train Loss: 0.0630690058072408, Validation Loss: 0.05053657665848732
+Epoch 26, MLP Train Loss: 0.06255221615235011, Validation Loss: 0.05085255019366741
+Epoch 27, MLP Train Loss: 0.059692165089978114, Validation Loss: 0.05104364641010761
+Epoch 28, MLP Train Loss: 0.061794693685240216, Validation Loss: 0.050397370010614395
+Epoch 29, MLP Train Loss: 0.060687905798355736, Validation Loss: 0.05065541807562113
+Epoch 30, MLP Train Loss: 0.06172814096013705, Validation Loss: 0.050644383765757084
+Epoch 31, MLP Train Loss: 0.05896046799090174, Validation Loss: 0.0505794370546937
+Epoch 32, MLP Train Loss: 0.05990595453315311, Validation Loss: 0.050428700633347034
+Epoch 33, MLP Train Loss: 0.060552991926670074, Validation Loss: 0.050308250822126865
+Epoch 34, MLP Train Loss: 0.060698955009380974, Validation Loss: 0.05050571635365486
+Epoch 35, MLP Train Loss: 0.06192096653911802, Validation Loss: 0.050685944966971874
+Epoch 36, MLP Train Loss: 0.05967095659838782, Validation Loss: 0.05098390579223633
+Epoch 37, MLP Train Loss: 0.062326366702715554, Validation Loss: 0.05085490271449089
+Epoch 38, MLP Train Loss: 0.060787808150053024, Validation Loss: 0.05111031886190176
+Epoch 39, MLP Train Loss: 0.06026784371998575, Validation Loss: 0.05104499030858278
+Epoch 40, MLP Train Loss: 0.060385859260956444, Validation Loss: 0.05088947433978319
+Epoch 41, MLP Train Loss: 0.06012783944606781, Validation Loss: 0.050686974078416824
+Epoch 42, MLP Train Loss: 0.06069890989197625, Validation Loss: 0.05046853981912136
+Epoch 43, MLP Train Loss: 0.05944571644067764, Validation Loss: 0.050448665395379066
+Epoch 44, MLP Train Loss: 0.060211422542730965, Validation Loss: 0.05044631939381361
+Epoch 45, MLP Train Loss: 0.06137240678071976, Validation Loss: 0.05051430407911539
+Epoch 46, MLP Train Loss: 0.05887740974624952, Validation Loss: 0.050543203949928284
+Epoch 47, MLP Train Loss: 0.06014598202374247, Validation Loss: 0.05046714469790459
+Epoch 48, MLP Train Loss: 0.0633857978714837, Validation Loss: 0.050453062169253826
+Epoch 49, MLP Train Loss: 0.06208312759796778, Validation Loss: 0.05063933599740267
+Epoch 0, KAC_Net Train Loss: 0.2627081109417809, Validation Loss: 0.22143404558300972
+Epoch 1, KAC_Net Train Loss: 0.2573572165436215, Validation Loss: 0.21597899124026299
+Epoch 2, KAC_Net Train Loss: 0.2554619014263153, Validation Loss: 0.364801749587059
+Epoch 3, KAC_Net Train Loss: 0.2674176063802507, Validation Loss: 0.20649894326925278
+Epoch 4, KAC_Net Train Loss: 0.2527666389942169, Validation Loss: 0.20239200070500374
+Epoch 5, KAC_Net Train Loss: 0.23937653501828512, Validation Loss: 0.19842803105711937
+Epoch 6, KAC_Net Train Loss: 0.23242485688792336, Validation Loss: 0.19476744160056114
+Epoch 7, KAC_Net Train Loss: 0.2339351756705178, Validation Loss: 0.19131426885724068
+Epoch 8, KAC_Net Train Loss: 0.22945215304692587, Validation Loss: 0.1881348192691803
+Epoch 9, KAC_Net Train Loss: 0.23203618824481964, Validation Loss: 0.18507690355181694
+Epoch 10, KAC_Net Train Loss: 0.22340726355711618, Validation Loss: 0.18359164521098137
+Epoch 11, KAC_Net Train Loss: 0.22279713220066494, Validation Loss: 0.18214640766382217
+Epoch 12, KAC_Net Train Loss: 0.21910558144251505, Validation Loss: 0.1807456649839878
+Epoch 13, KAC_Net Train Loss: 0.21976683537165323, Validation Loss: 0.17936914414167404
+Epoch 14, KAC_Net Train Loss: 0.22072143024868435, Validation Loss: 0.17798903957009315
+Epoch 15, KAC_Net Train Loss: 0.22469316754076216, Validation Loss: 0.17663303390145302
+Epoch 16, KAC_Net Train Loss: 0.2104870138896836, Validation Loss: 0.17529844120144844
+Epoch 17, KAC_Net Train Loss: 0.217092235883077, Validation Loss: 0.17399493232369423
+Epoch 18, KAC_Net Train Loss: 0.2109076546298133, Validation Loss: 0.1727009266614914
+Epoch 19, KAC_Net Train Loss: 0.2163696156607734, Validation Loss: 0.1713733784854412
+Epoch 20, KAC_Net Train Loss: 0.21846043897999656, Validation Loss: 0.17073391005396843
+Epoch 21, KAC_Net Train Loss: 0.21817605031861198, Validation Loss: 0.1700899451971054
+Epoch 22, KAC_Net Train Loss: 0.21221789552105796, Validation Loss: 0.16944699734449387
+Epoch 23, KAC_Net Train Loss: 0.2111208008395301, Validation Loss: 0.16881756111979485
+Epoch 24, KAC_Net Train Loss: 0.2136825140979555, Validation Loss: 0.1681547723710537
+Epoch 25, KAC_Net Train Loss: 0.21473642024728987, Validation Loss: 0.1675180122256279
+Epoch 26, KAC_Net Train Loss: 0.21493703458044264, Validation Loss: 0.16686558350920677
+Epoch 27, KAC_Net Train Loss: 0.21365626653035483, Validation Loss: 0.1662207804620266
+Epoch 28, KAC_Net Train Loss: 0.2082346495654848, Validation Loss: 0.1655784286558628
+Epoch 29, KAC_Net Train Loss: 0.2078901943233278, Validation Loss: 0.16493873298168182
+Epoch 30, KAC_Net Train Loss: 0.20977375739150578, Validation Loss: 0.16461170837283134
+Epoch 31, KAC_Net Train Loss: 0.2073612246248457, Validation Loss: 0.1642959527671337
+Epoch 32, KAC_Net Train Loss: 0.209429778986507, Validation Loss: 0.16397861018776894
+Epoch 33, KAC_Net Train Loss: 0.20467246406608158, Validation Loss: 0.16365431994199753
+Epoch 34, KAC_Net Train Loss: 0.2050724658701155, Validation Loss: 0.16333729401230812
+Epoch 35, KAC_Net Train Loss: 0.20722567703988817, Validation Loss: 0.16302046924829483
+Epoch 36, KAC_Net Train Loss: 0.20984020166926914, Validation Loss: 0.1627086140215397
+Epoch 37, KAC_Net Train Loss: 0.2044896533091863, Validation Loss: 0.1623784601688385
+Epoch 38, KAC_Net Train Loss: 0.20627952780988482, Validation Loss: 0.16206610575318336
+Epoch 39, KAC_Net Train Loss: 0.20750914017359415, Validation Loss: 0.16175958141684532
+Epoch 40, KAC_Net Train Loss: 0.20560908483134377, Validation Loss: 0.16160919144749641
+Epoch 41, KAC_Net Train Loss: 0.20458342300521004, Validation Loss: 0.16145087406039238
+Epoch 42, KAC_Net Train Loss: 0.2025316854317983, Validation Loss: 0.16129811853170395
+Epoch 43, KAC_Net Train Loss: 0.2051682968934377, Validation Loss: 0.1611410155892372
+Epoch 44, KAC_Net Train Loss: 0.2017423046959771, Validation Loss: 0.16098613291978836
+Epoch 45, KAC_Net Train Loss: 0.20381030605898964, Validation Loss: 0.1608314923942089
+Epoch 46, KAC_Net Train Loss: 0.20617187519868216, Validation Loss: 0.16067048907279968
+Epoch 47, KAC_Net Train Loss: 0.20218582782480451, Validation Loss: 0.16051854938268661
+Epoch 48, KAC_Net Train Loss: 0.20085063411129844, Validation Loss: 0.16036491841077805
+Epoch 49, KAC_Net Train Loss: 0.20400157239702013, Validation Loss: 0.16020772606134415
+Epoch 0, KAL_Net Train Loss: 0.3807670341597663, Validation Loss: 0.39368364959955215
+Epoch 1, KAL_Net Train Loss: 0.4029519226815965, Validation Loss: 0.38541627675294876
+Epoch 2, KAL_Net Train Loss: 0.4009989864296383, Validation Loss: 0.37725626677274704
+Epoch 3, KAL_Net Train Loss: 0.3898489475250244, Validation Loss: 0.3694467842578888
+Epoch 4, KAL_Net Train Loss: 0.38064923220210606, Validation Loss: 0.3620499297976494
+Epoch 5, KAL_Net Train Loss: 0.3793148861991035, Validation Loss: 0.35505548119544983
+Epoch 6, KAL_Net Train Loss: 0.37006009618441266, Validation Loss: 0.3482344523072243
+Epoch 7, KAL_Net Train Loss: 0.36811352769533795, Validation Loss: 0.3416609615087509
+Epoch 8, KAL_Net Train Loss: 0.36539341343773735, Validation Loss: 0.3352758213877678
+Epoch 9, KAL_Net Train Loss: 0.3558913701110416, Validation Loss: 0.32932327687740326
+Epoch 10, KAL_Net Train Loss: 0.3465708957778083, Validation Loss: 0.3263852819800377
+Epoch 11, KAL_Net Train Loss: 0.34604714645279777, Validation Loss: 0.32345427572727203
+Epoch 12, KAL_Net Train Loss: 0.34988392061657375, Validation Loss: 0.32062041759490967
+Epoch 13, KAL_Net Train Loss: 0.3509843283229404, Validation Loss: 0.3177414536476135
+Epoch 14, KAL_Net Train Loss: 0.3371700214015113, Validation Loss: 0.3149411305785179
+Epoch 15, KAL_Net Train Loss: 0.336995714240604, Validation Loss: 0.31213584542274475
+Epoch 16, KAL_Net Train Loss: 0.34300769368807477, Validation Loss: 0.309352844953537
+Epoch 17, KAL_Net Train Loss: 0.33952761358684963, Validation Loss: 0.3066226467490196
+Epoch 18, KAL_Net Train Loss: 0.3349884119298723, Validation Loss: 0.303935281932354
+Epoch 19, KAL_Net Train Loss: 0.32810670137405396, Validation Loss: 0.30125338584184647
+Epoch 20, KAL_Net Train Loss: 0.3282114664713542, Validation Loss: 0.2999160438776016
+Epoch 21, KAL_Net Train Loss: 0.32579735583729214, Validation Loss: 0.2985761687159538
+Epoch 22, KAL_Net Train Loss: 0.3269771701759762, Validation Loss: 0.2972537651658058
+Epoch 23, KAL_Net Train Loss: 0.3196923103597429, Validation Loss: 0.2959243506193161
+Epoch 24, KAL_Net Train Loss: 0.32696664664480424, Validation Loss: 0.294609896838665
+Epoch 25, KAL_Net Train Loss: 0.3236467142899831, Validation Loss: 0.29332397133111954
+Epoch 26, KAL_Net Train Loss: 0.3173343969715966, Validation Loss: 0.29201535135507584
+Epoch 27, KAL_Net Train Loss: 0.3191210197077857, Validation Loss: 0.29070179909467697
+Epoch 28, KAL_Net Train Loss: 0.31273019148243797, Validation Loss: 0.2893880605697632
+Epoch 29, KAL_Net Train Loss: 0.31776849428812665, Validation Loss: 0.28807198256254196
+Epoch 30, KAL_Net Train Loss: 0.32416070169872707, Validation Loss: 0.28743498027324677
+Epoch 31, KAL_Net Train Loss: 0.3182885100444158, Validation Loss: 0.286778524518013
+Epoch 32, KAL_Net Train Loss: 0.32304519083764816, Validation Loss: 0.2861265242099762
+Epoch 33, KAL_Net Train Loss: 0.3122827940517002, Validation Loss: 0.28547200560569763
+Epoch 34, KAL_Net Train Loss: 0.3131493230660756, Validation Loss: 0.2848372757434845
+Epoch 35, KAL_Net Train Loss: 0.30862367318736184, Validation Loss: 0.2841779738664627
+Epoch 36, KAL_Net Train Loss: 0.31968386305703056, Validation Loss: 0.2835349813103676
+Epoch 37, KAL_Net Train Loss: 0.3037999818722407, Validation Loss: 0.2828790470957756
+Epoch 38, KAL_Net Train Loss: 0.32356371151076424, Validation Loss: 0.28222811967134476
+Epoch 39, KAL_Net Train Loss: 0.31197986337873673, Validation Loss: 0.2815815284848213
+Epoch 40, KAL_Net Train Loss: 0.3066346612241533, Validation Loss: 0.2812552824616432
+Epoch 41, KAL_Net Train Loss: 0.3065502080652449, Validation Loss: 0.2809292823076248
+Epoch 42, KAL_Net Train Loss: 0.3185224665535821, Validation Loss: 0.28060395270586014
+Epoch 43, KAL_Net Train Loss: 0.3138820297188229, Validation Loss: 0.2802841067314148
+Epoch 44, KAL_Net Train Loss: 0.3089882830778758, Validation Loss: 0.2799650579690933
+Epoch 45, KAL_Net Train Loss: 0.30959516763687134, Validation Loss: 0.2796427831053734
+Epoch 46, KAL_Net Train Loss: 0.313437326086892, Validation Loss: 0.2793203070759773
+Epoch 47, KAL_Net Train Loss: 0.3061313264899784, Validation Loss: 0.27900081127882004
+Epoch 48, KAL_Net Train Loss: 0.3142796754837036, Validation Loss: 0.27868062257766724
+Epoch 49, KAL_Net Train Loss: 0.2997147738933563, Validation Loss: 0.2783612236380577
+Traceback (most recent call last):
+  File "f:\mycode\pykan\torchkan-main\exp3.py", line 175, in <module>
+    wandb.save(f"kan inverse.pth")
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\wandb_run.py", line 400, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\wandb_run.py", line 390, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\wandb_run.py", line 1981, in save
+    return self._save(
+           ^^^^^^^^^^^
+  File "F:\mycode\pykan\kannet\Lib\site-packages\wandb\sdk\wandb_run.py", line 2045, in _save
+    target_path.symlink_to(source_path)
+  File "F:\mycode\pykan\kannet\Lib\pathlib.py", line 1198, in symlink_to
+    os.symlink(target, self, target_is_directory)
+OSError: [WinError 1314] 客户端没有所需的特权。: 'F:\\mycode\\pykan\\kan inverse.pth' -> 'F:\\mycode\\pykan\\wandb\\run-20240624_101624-0s6oyfp6\\files\\kan inverse.pth'

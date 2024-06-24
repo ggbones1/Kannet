@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.9",
+    "heartbeatAt": "2024-06-24T02:16:26.959444",
+    "startedAt": "2024-06-24T02:16:24.339056",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "f:\\mycode\\pykan\\torchkan-main\\exp3.py",
+    "codePathLocal": "torchkan-main\\exp3.py",
+    "codePath": "torchkan-main\\exp3.py",
+    "git": {
+        "remote": null,
+        "commit": "b708c23e78992b3b03a24af3833243634e03f247"
+    },
+    "email": "2439752013@qq.com",
+    "root": "F:/mycode/pykan",
+    "host": "DESKTOP-7G3TLM0",
+    "username": "liquanbo",
+    "executable": "F:\\mycode\\pykan\\kannet\\python.exe",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2300.0,
+        "min": 0.0,
+        "max": 2300.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2300.0,
+            "min": 0.0,
+            "max": 2300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1863.0147285461426,
+            "used": 1572.6045761108398
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 31.743194580078125
+    }
+}

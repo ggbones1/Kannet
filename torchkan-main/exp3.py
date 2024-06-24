@@ -7,6 +7,8 @@ from torch.utils.data import DataLoader, TensorDataset, random_split
 import torch.optim as optim
 from torchkan import KAN
 from KACnet import KAC_Net
+from KALnet import KAL_Net
+
 import pandas as pd
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score, mean_squared_error
@@ -140,21 +142,37 @@ train_and_validate_model(kan_model, epochs=50, learning_rate=0.001, train_loader
     # Initialize and train the MLP model
 mlp_model = MLP(layers)
 train_and_validate_model(mlp_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"MLP")
-
+    # Initialize and train the KAC_net model
+kac_model = KAC_Net(layers)
+train_and_validate_model(kac_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAC_Net")
+    # Initialize and train the KAL_net model
+kal_model = KAL_Net(layers)
+train_and_validate_model(kal_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAL_Net")
     # Evaluate both models
 kan_predictions, kan_actuals = evaluate_model(kan_model, val_loader, f"KAN")
 mlp_predictions, mlp_actuals = evaluate_model(mlp_model, val_loader, f"MLP")
-
+kac_predictions, kac_actuals = evaluate_model(kac_model, val_loader, f"KAC_Net")
+kal_predictions, kal_actuals = evaluate_model(kal_model, val_loader, f"KAL_Net")
+    # Log results to wandb
     # Log results to wandb
 kan_data = [[pred, act] for pred, act in zip(kan_predictions, kan_actuals)]
 mlp_data = [[pred, act] for pred, act in zip(mlp_predictions, mlp_actuals)]
+kac_data = [[pred, act] for pred, act in zip(kac_predictions, kac_actuals)]
+kal_data = [[pred, act] for pred, act in zip(kal_predictions, kal_actuals)]
 wandb.log({
         f"KAN Predictions vs Actuals": wandb.Table(data=kan_data, columns=["KAN Predictions", "Actuals"]),
-        f"MLP Predictions vs Actuals": wandb.Table(data=mlp_data, columns=["MLP Predictions", "Actuals"])
+        f"MLP Predictions vs Actuals": wandb.Table(data=mlp_data, columns=["MLP Predictions", "Actuals"]),
+        f"KAC_Net Predictions vs Actuals": wandb.Table(data=kac_data, columns=["KAC_Net Predictions", "Actuals"]),
+        f"KAL_Net Predictions vs Actuals": wandb.Table(data=kal_data, columns=["KAL_Net Predictions", "Actuals"]),
+    
     })
 
     # Save model states
 torch.save(kan_model.state_dict(), f"kan inverse.pth")
 torch.save(mlp_model.state_dict(), f"mlp inverse.pth")
+torch.save(kac_model.state_dict(), f"kac_net inverse.pth")
+torch.save(kal_model.state_dict(), f"kal_net inverse.pth")
 wandb.save(f"kan inverse.pth")
 wandb.save(f"mlp inverse.pth")
+wandb.save(f"kac_net inverse.pth")
+wandb.save(f"kal_net inverse.pth")
