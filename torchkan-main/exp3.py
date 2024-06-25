@@ -8,7 +8,6 @@ import torch.optim as optim
 from torchkan import KAN
 from KACnet import KAC_Net
 from KALnet import KAL_Net
-
 import pandas as pd
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score, mean_squared_error
@@ -119,7 +118,7 @@ print("测试集样本数:", len(test_df))
 wandb.init(project="kan")
 dimension=4
 # Define model layers
-layers = [dimension, 64, 64, 32, 32, 16, 2]
+layers = [dimension, 9, 5, 2]
 x_data=torch.cat((input,test_input),0)
 y_data=torch.cat((ouput,test_label),0)
 
@@ -168,11 +167,19 @@ wandb.log({
     })
 
     # Save model states
+# 保存kan_model的状态字典到文件"kan inverse.pth"
 torch.save(kan_model.state_dict(), f"kan inverse.pth")
+# 保存mlp_model的状态字典到文件"mlp inverse.pth"
 torch.save(mlp_model.state_dict(), f"mlp inverse.pth")
+# 保存kac_model的状态字典到文件"kac_net inverse.pth"
 torch.save(kac_model.state_dict(), f"kac_net inverse.pth")
+# 保存kal_model的状态字典到文件"kal_net inverse.pth"
 torch.save(kal_model.state_dict(), f"kal_net inverse.pth")
+# 保存"kan inverse.pth"文件到wandb
 wandb.save(f"kan inverse.pth")
+# 保存"mlp inverse.pth"文件到wandb
 wandb.save(f"mlp inverse.pth")
+# 保存"kac_net inverse.pth"文件到wandb
 wandb.save(f"kac_net inverse.pth")
+# 保存"kal_net inverse.pth"文件到wandb
 wandb.save(f"kal_net inverse.pth")
