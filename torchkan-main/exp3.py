@@ -15,6 +15,60 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 def train_and_validate_model(model, epochs, learning_rate, train_loader, val_loader, model_name):
+    '''
+    这段代码是用Python编写的，主要用于训练一个神经网络模型。以下是代码的详细解释：
+
+1. 首先，导入所需的库和模块。这里使用了PyTorch（nn和optim模块）和wandb（用于跟踪训练过程）。
+
+2. 定义损失函数（均方误差损失）和优化器（随机梯度下降）。
+
+3. 定义学习率调度器（StepLR），用于在每个训练周期后调整学习率。这里设置了步长为10，gamma为0.5，这意味着每10个周期，学习率将乘以0.5。
+
+4. 定义训练和验证数据加载器（train_loader和val_loader）。
+
+5. 定义训练循环，共进行epochs个周期。在每个周期中：
+
+   a. 将模型设置为训练模式（model.train()）。
+
+   b. 初始化总损失为0（total_loss = 0）。
+
+   c. 遍历训练数据加载器（for x, y in train_loader:），对每个输入（x）和目标（y）进行以下操作：
+
+      i. 清除梯度（optimizer.zero_grad()）。
+/
+      ii. 使用模型预测输出（predicted_y = model(x)）。
+
+      iii. 计算损失（loss = loss_fn(predicted_y, y.unsqueeze(1))）。
+
+      iv. 反向传播损失（loss.backward()）。
+
+      v. 更新模型参数（optimizer.step()）。
+
+      vi. 将损失累加到总损失中（total_loss += loss.item()）。
+
+   d. 更新学习率（scheduler.step()）。
+
+   e. 计算平均训练损失（avg_loss = total_loss / len(train_loader)），并使用wandb记录训练损失（wandb.log({f"{model_name} Train Loss": avg_loss})）。
+
+6. 将模型设置为评估模式（model.eval()）。
+
+7. 初始化总验证损失为0（total_val_loss = 0）。
+
+8. 遍历验证数据加载器（for x, y in val_loader:），对每个输入（x）和目标（y）进行以下操作：
+
+   a. 使用模型预测输出（predicted_y = model(x)）。
+
+   b. 计算验证损失（val_loss = loss_fn(predicted_y, y.unsqueeze(1))）。
+
+   c. 将验证损失累加到总验证损失中（total_val_loss += val_loss.item()）。
+
+9. 计算平均验证损失（avg_val_loss = total_val_loss / len(val_loader)），并使用wandb记录验证损失（wandb.log({f"{model_name} Validation Loss": avg_val_loss})）。
+
+10. 打印训练和验证损失（print(f"Epoch {epoch}, {model_name} Train Loss: {avg_loss}, Validation Loss: {avg_val_loss}")）。
+
+总之，这段代码实现了一个简单的神经网络模型训练过程，包括训练和验证损失的计算、学习率的调度以及训练过程的记录。
+
+'''
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     loss_fn = nn.MSELoss()
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5)
