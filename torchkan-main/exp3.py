@@ -172,7 +172,7 @@ print("测试集样本数:", len(test_df))
 wandb.init(project="kan")
 dimension=4
 # Define model layers
-layers = [dimension, 9, 5, 2]
+layers = [dimension, 7, 2]
 x_data=torch.cat((input,test_input),0)
 y_data=torch.cat((ouput,test_label),0)
 
@@ -184,23 +184,23 @@ val_size = len(dataset) - train_size
 # 将数据集划分为训练集和验证集
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 # 创建训练集的DataLoader对象，批量大小为32，打乱数据
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+train_loader = DataLoader(train_dataset, batch_size=256, shuffle=True)
 # 创建验证集的DataLoader对象，批量大小为32，不打乱数据
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
     # Initialize and train the KAN model
 kan_model = KAN(layers)
-train_and_validate_model(kan_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAN")
+train_and_validate_model(kan_model, epochs=100, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAN")
 
     # Initialize and train the MLP model
 mlp_model = MLP(layers)
-train_and_validate_model(mlp_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"MLP")
+train_and_validate_model(mlp_model, epochs=100, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"MLP")
     # Initialize and train the KAC_net model
 kac_model = KAC_Net(layers)
-train_and_validate_model(kac_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAC_Net")
+train_and_validate_model(kac_model, epochs=100, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAC_Net")
     # Initialize and train the KAL_net model
 kal_model = KAL_Net(layers)
-train_and_validate_model(kal_model, epochs=50, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAL_Net")
+train_and_validate_model(kal_model, epochs=100, learning_rate=0.001, train_loader=train_loader, val_loader=val_loader, model_name=f"KAL_Net")
     # Evaluate both models
 kan_predictions, kan_actuals = evaluate_model(kan_model, val_loader, f"KAN")
 mlp_predictions, mlp_actuals = evaluate_model(mlp_model, val_loader, f"MLP")
@@ -219,18 +219,62 @@ wandb.log({
         f"KAL_Net Predictions vs Actuals": wandb.Table(data=kal_data, columns=["KAL_Net Predictions", "Actuals"]),
     
     })
+import csv
 
-    # Save model states
+def save_to_csv(kan_predictions, kan_actuals, mlp_predictions, mlp_actuals, kac_predictions, kac_actuals, kal_predictions, kal_actuals):
+    # 打开或创建 CSV 文件
+    with open('output.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+
+        # 写入标题行
+        writer.writerow(["KAN_Predictions", "KAN_Actuals", "MLP_Predictions", "MLP_Actuals", "KAC_Net_Predictions", "KAC_Net_Actuals", "KAL_Net_Predictions", "KAL_Net_Actuals"])
+
+        # 写入数据行
+        for i in range(len(kan_predictions)):
+            writer.writerow([kan_predictions[i], kan_actuals[i], mlp_predictions[i], mlp_actuals[i], kac_predictions[i], kac_actuals[i], kal_predictions[i], kal_actuals[i]])
+
+# 假设您已经有了这些变量的值，调用函数进行保存
+save_to_csv(kan_predictions, kan_actuals, mlp_predictions, mlp_actuals, kac_predictions, kac_actuals, kal_predictions, kal_actuals)
+#画图
+def log_predictions_to_wandb(model_name, predictions, actuals):
+    plt.figure(figsize=(10, 6))
+    plt.plot(predictions, label='Predictions')
+    plt.plot(actuals, label='Actuals')
+    plt.title(f'{model_name} Predictions vs Actuals')
+    plt.xlabel('Samples')
+    plt.ylabel('Values')
+    plt.legend()
+    
+    # 保存图表到文件
+    plt.savefig(f"{model_name}_predictions_vs_actuals.png")
+    
+    # 使用W&B记录图表
+    wandb.log({f"{model_name}_predictions_vs_actuals": wandb.Image(f"{model_name}_predictions_vs_actuals.png")})
+    
+    # 清除当前的图表，以便下一次绘图
+    plt.clf()
+
+# 记录KAN模型的结果
+log_predictions_to_wandb("KAN", kan_predictions, kan_actuals)
+
+# 记录MLP模型的结果
+log_predictions_to_wandb("MLP", mlp_predictions, mlp_actuals)
+
+# 记录KAC_Net模型的结果
+log_predictions_to_wandb("KAC_Net", kac_predictions, kac_actuals)
+
+# 记录KAL_Net模型的结果
+log_predictions_to_wandb("KAL_Net", kal_predictions, kal_actuals)
 # 保存kan_model的状态字典到文件"kan inverse.pth"
-torch.save(kan_model.state_dict(), f"kan inverse.pth")
+#torch.save(kan_model.state_dict(), f"kan inverse.pth")
 # 保存mlp_model的状态字典到文件"mlp inverse.pth"
-torch.save(mlp_model.state_dict(), f"mlp inverse.pth")
+#torch.save(mlp_model.state_dict(), f"mlp inverse.pth")
 # 保存kac_model的状态字典到文件"kac_net inverse.pth"
-torch.save(kac_model.state_dict(), f"kac_net inverse.pth")
+#torch.save(kac_model.state_dict(), f"kac_net inverse.pth")
 # 保存kal_model的状态字典到文件"kal_net inverse.pth"
-torch.save(kal_model.state_dict(), f"kal_net inverse.pth")
+#torch.save(kal_model.state_dict(), f"kal_net inverse.pth")
 # 保存"kan inverse.pth"文件到wandb
-wandb.save(f"kan inverse.pth")
+#wandb.save(f"kan inverse.pth")
 # 保存"mlp inverse.pth"文件到wandb
 wandb.save(f"mlp inverse.pth")
 # 保存"kac_net inverse.pth"文件到wandb
