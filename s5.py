@@ -14,6 +14,8 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score,mean_squared_error
 import seaborn as sns
+from sklearn.neural_network import MLPRegressor
+from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 plt.rcParams['font.family'] = 'SimHei' # 设置字体为SimHei
 
 # 上传文件并选择要使用的列数
@@ -43,40 +45,51 @@ if uploaded_file is not None:
     learning_rate_init = st.number_input('学习率', value=0.001)
     iterations = st.number_input('迭代次数', value=100)
 
-    # 训练模型
-    model = MLPRegressor(hidden_layer_sizes=tuple(nodes_list), activation=activation, solver=solver,
+
+class CustomMLPRegressor(MLPRegressor):
+    def fit(self, X, y):
+        X, y = check_X_y(X, y, accept_sparse=['csr', 'csc', 'coo'])
+        self._label_binarizer = None
+        self._random_state = np.random.RandomState(self.random_state)
+        
+        if self.verbose:
+            print(f"Training loss at epoch 1: {self.loss_}")
+
+        self.losses_ = []
+        
+        def record_loss(*args, **kwargs):
+            self.losses_.append(self.loss_)
+        
+        self._stopping_criterion_callback = record_loss
+        
+        super().fit(X, y)
+        return self
+    
+    def _stopping_criterion_callback(self, *args, **kwargs):
+        pass
+
+
+
+model = CustomMLPRegressor(hidden_layer_sizes=tuple(nodes_list), activation=activation, solver=solver,
                           alpha=alpha, learning_rate_init=learning_rate_init, max_iter=iterations)
-    model.fit(X, y)
+ # Replace with your data
+model.fit(X, y)
+
+# Save losses to Excel
+df1 = pd.DataFrame(model.losses_, columns=['Loss'])
+df1.to_excel('training_losses.xlsx', index=False)
+save_button = st.button("保存Loss")
+
+
+
+
 
    # 训练模型并进行预测
 model.fit(X_train_scaled, y_train_raw)
 y_pred_raw = model.predict(X_test_scaled)
 r2score = r2_score(y_test_raw,y_pred_raw)
 mse = mean_squared_error(y_test_raw,y_pred_raw)
-import pandas as pd
-from sklearn.neural_network import MLPRegressor
 
-# 定义函数来记录 loss
-def record_loss(X, y, nodes_list, activation, solver, alpha, learning_rate_init, iterations):
-    model = MLPRegressor(hidden_layer_sizes=tuple(nodes_list), activation=activation, solver=solver,
-                         alpha=alpha, learning_rate_init=learning_rate_init, max_iter=iterations)
-    loss_values = []  # 用于存储每次迭代的 loss 值
-
-    # 定义一个回调函数，在每次迭代后获取 loss 值
-    def callback(model, epoch, logs):
-        loss = logs.get('loss')
-        loss_values.append(loss)
-
-    model.fit(X, y, callbacks=[callback])  # 在训练时使用回调函数
-
-    # 将 loss 值存储到 DataFrame 中
-    df = pd.DataFrame(loss_values, columns=['Loss'])
-
-    # 将 DataFrame 存储到 Excel 文件中
-    df.to_excel('loss_values.xlsx', index=False)
-
-# 调用函数进行训练和记录 loss
-record_loss(X, y, nodes_list, activation, solver, alpha, learning_rate_init, iterations)
 # 显示模型评估指标的结果
 st.write("## 模型评估")
 st.write(f"R2 score: {r2score:.4f}")
